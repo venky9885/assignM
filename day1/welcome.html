@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <script>
+    // Retrieve the login details from session storage
+    var username = sessionStorage.getItem('username');
+    var password = sessionStorage.getItem('password');
+    
+    // Display the login details
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('username').textContent = username;
+      document.getElementById('password').textContent = password;
+    });
+  </script>
+</head>
+<body>
+  <h2>Welcome Page</h2>
+  <p>Login Details:</p>
+  <p>Username: <span id="username"></span></p>
+  <p>Password: <span id="password"></span></p>
+</body>
+</html>

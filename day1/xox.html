@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XOX Game</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        .board {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-self: center; */
+            width: 240px;
+        }
+        /* h1{
+            margin-left: 40px;
+        } */
+        /* body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 400px;
+        } */
+
+        .br{
+            /* margin-left: 40vw; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cell {
+            box-sizing: border-box;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            font-size: 48px;
+            display: flex;
+            /* margin: 1px; */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background-color: darkgray;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div  class="br">
+            <h1>XOX Game</h1>
+            <div class="board">
+                <div class="cell" onclick="changeCell(0)"  id="0"></div>
+                <div class="cell" onclick="changeCell(1)" id="1"></div>
+                <div class="cell" onclick="changeCell(2)"></div>
+                <div class="cell" onclick="changeCell(3)"></div>
+                <div class="cell" onclick="changeCell(4)"></div>
+                <div class="cell" onclick="changeCell(5)"></div>
+                <div class="cell" onclick="changeCell(6)"></div>
+                <div class="cell" onclick="changeCell(7)"></div>
+                <div class="cell" onclick="changeCell(8)"></div>
+            </div>
+    </div>
+    <script>
+        let currentPlayer = 'X';
+        const cells = document.querySelectorAll('.cell');
+
+        function changeCell(cellIndex) {
+            // document.getElementById(cellIndex).style = "background-color: red;";
+           
+            if (!cells[cellIndex].textContent) {
+                cells[cellIndex].textContent = currentPlayer;
+                cells[cellIndex].classList.add(currentPlayer);
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                cells[cellIndex].textContent == 'X' ? cells[cellIndex].style = "background-color: pink;" : cells[cellIndex].style = "background-color: beige;"
+                
+            }
+        }
+    </script>
+</body>
+</html>

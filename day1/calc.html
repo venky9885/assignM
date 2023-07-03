@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CalculatorAndToDoList</title>
+
+  </head>
+
+  <body>
+
+    <section>
+
+      <div class="calculator">
+
+        <h1>A Simple Calculator</h1>
+
+        <form>
+
+          <input
+
+            text="number"
+
+            id="val1"
+
+            placeholder="Enter value1"
+
+            onkeyup="operation()"
+
+          />
+
+          <select id="op" onclick="operation()">
+
+            <option value="+">+</option>
+
+            <option value="-">-</option>
+
+            <option value="*">*</option>
+
+            <option value="\">/</option>
+
+          </select>
+
+          <input
+
+            text="number"
+
+            id="val2"
+
+            placeholder="Enter value2"
+
+            onkeyup="operation()"
+
+          />
+
+          <span class="ch">=</span>
+
+          <input text="output" id="out" placeholder="Enter value1" readonly />
+
+        </form>
+
+        <script>
+
+          operation = () => {
+
+            var value1 = document.getElementById("val1").value;
+
+            var value2 = document.getElementById("val2").value;
+
+            var output = document.getElementById("out");
+
+            var operator = document.getElementById("op").value;
+
+            if (operator == "+") {
+
+              if (value1 != null && value2 != null) {
+
+                output.setAttribute(
+
+                  "placeholder",
+
+                  String(Number(value1) + Number(value2))
+
+                );
+
+              }
+
+            } else if (operator == "-") {
+
+              if (value1 != null && value2 != null) {
+
+                output.setAttribute(
+
+                  "placeholder",
+
+                  String(Number(value1) - Number(value2))
+
+                );
+
+              }
+
+            } else if (operator == "*") {
+
+              if (value1 != null && value2 != null) {
+
+                output.setAttribute(
+
+                  "placeholder",
+
+                  String(Number(value1) * Number(value2))
+
+                );
+
+              }
+
+            } else if (operator == "\\") {
+
+              if (value1 != null && value2 != null) {
+
+                output.setAttribute(
+
+                  "placeholder",
+
+                  String(Number(value1) / Number(value2))
+
+                );
+
+              }
+
+            }
+
+          };
+
+        </script>
+
+      
+
+        
+
+  </body>
+
+</html>
